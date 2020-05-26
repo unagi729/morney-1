@@ -7,24 +7,36 @@
   </div>
 </template>
 
-<script >
+<script lang="ts">
 import Vue from "vue";
+import { Component, Prop } from "vue-property-decorator";
 
-export default Vue.extend({
-  data() {
-    return {
-      type: "-"
-    };
-  },
-  methods: {
-    selectType(type) {
-      if (type !== "-" && type !== "+") {
-        throw new Error("type is unknown");
-      }
-      this.type = type;
+@Component
+export default class Types extends Vue {
+  type = "-";
+  selectType(type: string) {
+    if (type !== "-" && type !== "+") {
+      throw new Error("type is unknown");
     }
+    this.type = type;
   }
-});
+}
+
+// export default Vue.extend({
+//   data() {
+//     return {
+//       type: "-"
+//     };
+//   },
+//   methods: {
+//     selectType(type) {
+//       if (type !== "-" && type !== "+") {
+//         throw new Error("type is unknown");
+//       }
+//       this.type = type;
+//     }
+//   }
+// });
 </script>
 
 <style lang="scss" scoped>
