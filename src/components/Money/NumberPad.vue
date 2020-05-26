@@ -13,7 +13,8 @@
       <button @click="inputContent">7</button>
       <button @click="inputContent">8</button>
       <button @click="inputContent">9</button>
-      <button @click="ok" class="ok">OK</button>
+      <button class="ok">OK</button>
+      <!-- ok事件暂时删除 -->
       <button @click="inputContent" class="zero">0</button>
       <button @click="inputContent">.</button>
     </div>
