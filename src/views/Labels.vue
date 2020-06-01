@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <Layout>
-      <ol class="tags">
-        <li v-for="tag in tags" :key="tag">
-          <span>衣</span>
-          <Icon name="right" />
-        </li>
-      </ol>
-      <div class="createTag-wrapper">
-        <button class="createTag" @click="createTag">新建标签</button>
-      </div>
-    </Layout>
-    <Nav />
-  </div>
+  <Layout>
+    <ol class="tags">
+      <li v-for="tag in tags" :key="tag.id">
+        <span>{{tag.name}}</span>
+        <Icon name="right" />
+      </li>
+    </ol>
+    <div class="createTag-wrapper">
+      <button class="createTag" @click="createTag">新建标签</button>
+    </div>
+  </Layout>
 </template>
 
 <script lang="ts">
