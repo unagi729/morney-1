@@ -6,10 +6,10 @@
     <ul class="current">
       <li
         v-for="tag in dataSource"
-        :key="tag"
+        :key="tag.id"
         :class="selectedTags.indexOf(tag)>=0 && 'selected'"
         @click="toggle(tag)"
-      >{{tag}}</li>
+      >{{tag.name}}</li>
     </ul>
   </div>
 </template>
@@ -44,6 +44,7 @@ export default class Tgas extends Vue {
 
 <style lang="scss" scoped>
 .tags {
+  background: white;
   flex-grow: 1;
   font-size: 14px;
   padding: 16px;
