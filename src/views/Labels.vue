@@ -15,9 +15,8 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import { tagListModel } from "@/models/tagListModel.ts";
+import Button from "@/components/Button.vue";
 
-tagListModel.fetch();
 @Component
 export default class Labels extends Vue {
   tags = window.tagList;
