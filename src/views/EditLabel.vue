@@ -35,12 +35,12 @@ export default class EditLabel extends Vue {
   }
   update(name: string) {
     if (this.tag) {
-      store.updateTag(this.tag.id, name);
+      store.updateTags(this.tag.id, name);
     }
   }
   remove() {
     if (this.tag) {
-      if (store.removeTag(this.tag.id)) {
+      if (store.removeTags(this.tag.id)) {
         this.$router.back();
       } else {
         window.alert("删除失败");
