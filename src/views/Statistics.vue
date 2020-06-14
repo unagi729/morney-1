@@ -3,7 +3,10 @@
     <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type" />
     <ol>
       <li v-for="(group,index) in groupedList" :key="index">
-        <h3 class="title">{{beautify(group.title)}}</h3>
+        <h3 class="title">
+          {{beautify(group.title)}}
+          <span>￥{{group.total}}</span>
+        </h3>
         <ol>
           <li v-for="item in group.items" :key="item.id" class="record">
             <span>{{tagString(item.tags)}}</span>
@@ -96,26 +99,7 @@ export default class Statistics extends Vue {
 }
 </script>
 
-<style scoped lang='scss'>
-%item {
-  padding: 8px 16px;
-  line-height: 24px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-.title {
-  @extend %item;
-}
-.record {
-  background: white;
-  @extend %item;
-}
-.notes {
-  margin-right: auto;
-  margin-left: 16px;
-  color: #999999;
-}
+<style scoped lang="scss">
 ::v-deep {
   .type-tabs-item {
     background: #c4c4c4;
@@ -129,5 +113,24 @@ export default class Statistics extends Vue {
   .interval-tabs-item {
     height: 48px;
   }
+}
+%item {
+  padding: 8px 16px;
+  line-height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.title {
+  @extend %item;
+}
+.record {
+  background: white;
+  @extend %item;
+}
+.notes {
+  margin-right: auto;
+  margin-left: 16px;
+  color: #999;
 }
 </style>
